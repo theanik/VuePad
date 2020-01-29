@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import HiWorld from '@/components/HiWorld'
 import ConditionWorld from '@/components/ConditionWorld'
 import List from '@/components/List'
+import Computed from '@/components/Computed'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/list',
       name: 'List',
       component: List
+    },
+    {
+      path: '/computed',
+      name: 'Computed',
+      component: Computed
     }
   ]
 })

@@ -7,10 +7,12 @@
 
 <script>
 import Navbar from './components/partial/Navbar'
+import Counter from './components/Counter'
 export default {
   name: 'App',
   components : {
-    Navbar
+    Navbar,
+    Counter
   }
 }
 </script>

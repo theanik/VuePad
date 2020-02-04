@@ -5,7 +5,14 @@
         </p>
 
         <button @click="doSomething">DO IT!!</button>
+        <input type="text" v-model="newText">
+        <button @click="addTodo">Add</button>
+
+        <!-- <p v-for="per in todos">
+                {{ per.name }}
+        </p> -->
     </div>
+
     
 </template>
 
@@ -19,7 +26,9 @@ export default {
                 {name: "anik", age : 20,},
                 {name: "an11ik", age : 20,},
                 {name: "anik", age : 20,}
-            ]
+            ],
+            todos: [],
+            newText: '',
         }
     },
     methods: {
@@ -29,6 +38,13 @@ export default {
             })
 
             console.log(filterPerson)
+        },
+
+        addTodo(){
+            this.todos.push({
+                name:this.newText
+            })
+            this.newText = ''
         }
     }
 

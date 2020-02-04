@@ -4,6 +4,8 @@
         <!-- <button @click="reverseMe">Revers Me</button> -->
         <p>{{ reverseMe }}</p>
         <p>{{ fullName }}</p>
+        <input v-model="question" />
+        {{answer}}
     </div>
 </template>
 <script>
@@ -12,7 +14,9 @@ export default {
         return {
             msg : 'Reverse Me!!',
             firstName : 'Anik',
-            lastName: 'Anwar'
+            lastName: 'Anwar',
+            question: '',
+            answer: ''
         }
     },
     computed:{
@@ -28,6 +32,12 @@ export default {
             }
         }
         
+    },
+    
+    watch:{
+        question: function(newQ, oldQ) {
+            this.answer = 'typeing'
+        }
     }
 
 

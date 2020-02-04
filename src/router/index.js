@@ -5,6 +5,7 @@ import HiWorld from '@/components/HiWorld'
 import ConditionWorld from '@/components/ConditionWorld'
 import List from '@/components/List'
 import Computed from '@/components/Computed'
+import Event from '@/components/Event'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/computed',
       name: 'Computed',
       component: Computed
+    },
+    {
+      path: '/event',
+      name: 'Event',
+      component: Event
     }
   ]
 })

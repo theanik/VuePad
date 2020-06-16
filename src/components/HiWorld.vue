@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1> Hi {{ msg }}</h1>
+        <h1 class="my-color"> Hi {{ msg }}</h1>
         <input  v-model="address">
         <p>I am from {{ address }}</p>
         <div v-bind:id="dynamicId"> Hi</div>

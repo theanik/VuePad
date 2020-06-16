@@ -6,6 +6,7 @@ import ConditionWorld from '@/components/ConditionWorld'
 import List from '@/components/List'
 import Computed from '@/components/Computed'
 import Event from '@/components/Event'
+import Product from '@/components/Product'
 
 Vue.use(Router)
 
@@ -36,6 +37,12 @@ export default new Router({
       path: '/event',
       name: 'Event',
       component: Event
+    },
+    {
+      path: '/productlist',
+      name : 'Product',
+      component : Product
     }
+
   ]
 })

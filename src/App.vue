@@ -1,11 +1,16 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <router-view/>
+    <div class="row m-3">
+      <div class="container">
+      <router-view/>
+    </div>
+    </div>
   </div>
 </template>
 
 <script>
+
 import Navbar from './components/partial/Navbar'
 import Counter from './components/Counter'
 export default {
@@ -20,7 +25,10 @@ export default {
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
+
+@import './assets/css/test.css';
+
 </style>

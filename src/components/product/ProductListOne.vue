@@ -18,7 +18,7 @@ import {mapActions} from 'vuex'
         },
         computed:{
             products(){
-                return this.$store.state.products
+                return this.$store.state.product.products
             }
         },
         methods:{

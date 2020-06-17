@@ -18,6 +18,17 @@ export default {
   components : {
     Navbar,
     Counter
+  },
+  created(){
+    this.$store.dispatch("getUser")
+    this.$http.interceptors.response.use(undefined, function (err) {
+      return new Promise(function (resolve, reject) {
+        if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
+          this.$store.dispatch("LOGOUT_REQUEST")
+        }
+        throw err;
+      });
+    });
   }
 }
 </script>

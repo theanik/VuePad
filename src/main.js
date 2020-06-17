@@ -8,16 +8,25 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import {store} from './store/index'
+import store from './store/index'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 
 
-Vue.config.productionTip = false
+
+Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue)
 
 
 
+const token = localStorage.getItem('auth-token')
+if (token) {
+  axios.defaults.headers.common['Authorization'] = 'Bearer '+token
+}
 
+
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

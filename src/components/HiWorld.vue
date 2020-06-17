@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="my-color"> Hi {{ msg }}</h1>
+        <h1 v-if="isLogin" class="my-color"> Hi {{ authUser.name }}</h1>
         <input  v-model="address">
         <p>I am from {{ address }}</p>
         <div v-bind:id="dynamicId"> Hi</div>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
     data() {
         return {
@@ -27,8 +28,11 @@ export default {
             styleObj :{
                 color : 'blue',
                 fontSize : 30
-            }
+            },
         }
+    },
+    mounted(){
+        // console.log(this.user)
     },
     methods :  {
         doSomething(){
@@ -38,6 +42,16 @@ export default {
                 this.show = false
             }
         }
+    },
+    computed :{
+        ...mapGetters([
+                'authUser',
+                'isLogin'
+            ])
+
+        // user(){
+        //     return this.$store.getters.auth.authUser
+        // }
     }
 }
 </script>
